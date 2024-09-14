@@ -1,3 +1,6 @@
+"""
+This module takes care of starting the API Server, Loading the DB and Adding the endpoints
+"""
 from flask import Flask, request, jsonify, url_for, Blueprint
 from flask_jwt_extended import get_jwt, create_access_token, get_jwt_identity, jwt_required, JWTManager
 from flask_bcrypt import Bcrypt
@@ -12,6 +15,7 @@ api = Blueprint('api', __name__)
 
 # Allow CORS requests to this API
 CORS(api)
+
 
 @api.route('/hello', methods=['POST', 'GET'])
 def handle_hello():
